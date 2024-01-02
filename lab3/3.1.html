@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>xmlhttp req</h2>
+<button type="button" onclick="handleClick()">get Content</button>
+<div>
+
+    Response: <span class="resp">-</span>
+</div>
+
+<script>
+function handleClick() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.querySelector(".resp").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "a.txt");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

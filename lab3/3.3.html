@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<style>
+    td,th{
+        padding: 5px;
+    }
+
+</style>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadXML()">Get my CD collection</button>
+<br><br>
+<table id="cdTable" border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Country</th>
+        <th>Company</th>
+        <th>Price</th>
+        <th>Year</th>
+    </tr>
+</table>
+
+<script>
+
+function loadXML() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayTable(this);
+            }
+        };
+        xhttp.open("GET", "cd_catalog.xml", true);
+        xhttp.send();
+    }
+    function displayTable(xml) {
+        var xmlDoc = xml.responseXML;
+        var table = document.getElementById("cdTable");
+
+        var cds = xmlDoc.getElementsByTagName("cd");
+        console.log(cds)
+
+        for (var i = 0; i < cds.length; i++) {
+            var row = table.insertRow(table.rows.length);
+            var title = row.insertCell(0);
+            var artist = row.insertCell(1);
+            var country = row.insertCell(2);
+            var company = row.insertCell(3);
+            var price = row.insertCell(4);
+            var year = row.insertCell(5);
+
+            title.innerHTML = cds[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            artist.innerHTML = cds[i].getElementsByTagName("artist")[0].childNodes[0].nodeValue;
+            country.innerHTML = cds[i].getElementsByTagName("country")[0].childNodes[0].nodeValue;
+            company.innerHTML = cds[i].getElementsByTagName("company")[0].childNodes[0].nodeValue;
+            price.innerHTML = cds[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            year.innerHTML = cds[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
+        }
+    }
+
+</script>
+
+</body>
+</html>

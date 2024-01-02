@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdcatalog>
+    <cd>
+        <title>Slim Shady</title>
+        <artist>Eminem</artist>
+        <country>USA</country>
+        <company>Em</company>
+        <price>5.9</price>
+        <year>1999</year>
+    </cd>
+    <cd>
+        <title>Wondergods</title>
+        <artist>Underdogs</artist>
+        <country>Nepal</country>
+        <company>Underdogs</company>
+        <price>14.99</price>
+        <year>2019</year>
+    </cd>
+</cdcatalog>
