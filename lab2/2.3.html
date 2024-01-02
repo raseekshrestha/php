@@ -1,0 +1,17 @@
+<html>
+    <body>
+        Input radius value and get volume:<br>
+        Radius:<br>
+        <input type="number" id="radius"><br>
+        Volume:<br>
+        <input type="number" id="vol"><br>
+        <button onclick="calc()">Calculate</button>
+        <script>
+            function calc(){
+                const radius = parseInt(document.querySelector("#radius").value)
+                document.querySelector("#vol").value = (Math.PI * radius * radius).toFixed(2);
+            }
+        </script>
+    </body>
+    
+</html>
