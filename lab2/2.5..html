@@ -12,7 +12,7 @@
 
         <script>
             function isAlphaNum(str){
-            return /^[a-zA-Z0-9]+$/.test(str)
+            return /(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/.test(str)
             
             }
             const btn = document.querySelector("#btn")
