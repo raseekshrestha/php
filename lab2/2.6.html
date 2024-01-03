@@ -1,0 +1,59 @@
+
+<html>
+    <head>
+        <title>alphanum</title>
+    </head>
+    <body>
+        
+        <input type="email" placeholder="email" id="email">
+        <input type="text" placeholder="password" id="password">
+        <button id="btn">validate</button>
+        <div id="result"></div>
+        
+
+        <script>
+            function isEmail(email){
+                return /^[\w\d+._-]+@[\w\d]+\.[\w]+(.[\w]{2,})*$/.test(email)
+            }
+
+            function validPassword(pass){
+                return /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(pass)
+            }
+            const btn = document.querySelector("#btn")
+            btn.addEventListener("click",()=>{
+                const email = document.querySelector("#email").value
+                const password = document.querySelector("#password").value
+                const res = document.querySelector("#result")
+                res.innerHTML = ""
+                if (isEmail(email)){
+                    res.insertAdjacentHTML("beforeend","Email is valid<br>")    
+                }else{
+                    res.insertAdjacentHTML("beforeend","Email is not valid<br>")    
+
+                }
+                if (validPassword(password)){
+                    res.insertAdjacentHTML("beforeend","password is valid<br>")    
+                }else{
+                    res.insertAdjacentHTML("beforeend","password is not valid<br>")    
+
+                }
+            })
+
+
+            // console.log(isEmail("john.doe123@tuiost.com.np"))
+            // console.log(isEmail("myemail123@gmail"))
+
+            // console.log(validPassword("strongpass"))
+            // console.log(validPassword("strongpaSS123"))
+        
+        
+        </script>
+
+    </body>
+
+</html>
+
+
+
+
+

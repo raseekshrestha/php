@@ -1,0 +1,40 @@
+
+<html>
+    <head>
+        <title>alphanum</title>
+    </head>
+    <body>
+        
+        <input type="text" placeholder="alphanumeric" id="alpha" value="123">
+        <button id="btn">validate alphanum</button>
+        <div id="result"></div>
+        
+
+        <script>
+            function isAlphaNum(str){
+            return /^[a-zA-Z0-9]+$/.test(str)
+            
+            }
+            const btn = document.querySelector("#btn")
+            btn.addEventListener("click",(e)=>{
+                const inp = document.querySelector("#alpha").value
+                
+                if (isAlphaNum(inp)){
+                    document.querySelector("#result").innerHTML = "alpha numeric"
+                }
+                else{
+                    document.querySelector("#result").innerHTML = "not alpha numeric"
+        
+                }
+            })
+            // console.log(isAlphaNum("string123"))
+            // console.log(isAlphaNum("@lpha123"))
+        
+        
+        </script>
+
+    </body>
+
+</html>
+
+
